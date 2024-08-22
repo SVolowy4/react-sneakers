@@ -1,0 +1,37 @@
+.card {
+   margin-top: 30px;
+   width: 180px;
+   height: 230px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border: 1px solid rgba(128, 128, 128, 0.249);
+   border-radius: 20px;
+   padding: 20px;
+   &:hover {
+     transform: translateX(20px);
+     transform: translateY(-10px);
+     box-shadow: 5px 5px 10px black;
+     transition: box-shadow, transform 0.2s ease-in-out;
+   }
+
+   .cardTitle {
+     margin-bottom: 10px;
+   }
+
+   .cardItems {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+     .items {
+       span {
+         color: rgba(0, 0, 0, 0.5);
+       }
+       p {
+         font-weight: bold;
+       }
+     }
+ }
+
+ }

@@ -1,27 +1,22 @@
+import React from "react";
+
 import Cart from "./components/Cart"
 import Header from "./components/Header"
 import ContentHeader from "./components/ContentHeader"
 import Card from "./components/Card";
 
-const arr = [
-  {image: "/img/sneakers/1.jpg", title: "Мужские Кроссовки Nike Blazer Mid Suede", price: 500},
-  {image: "/img/sneakers/2.jpg", title: "Мужские Кроссовки Nike Air Max 270", price: 800},
-  {image: "/img/sneakers/3.jpg", title: "Мужские Кроссовки Nike Blazer Mid Suede", price: 400}
-]
-
-
 
 function App() {
+
+    const [items, setItems] = React.useState([])
+    const [cartOpened, setCartOpened] = React.useState(false)
+
   return (
     <div className="wrapper">
 
-      <div className="overlay" /*style={{display:"none"}}*/>
+      {cartOpened && <Cart onClose={() => setCartOpened(false)} />}
 
-        <Cart/>
-
-      </div>
-
-      <Header/>
+      <Header onClickCart = {() => setCartOpened(true)}/>
 
       <div className="content">
  

@@ -1,0 +1,14 @@
+     .cartModalHeader {
+       display: flex;
+       justify-content: space-between;
+       margin-bottom: 20px;
+      svg {
+        rect {
+          fill: red;
+        }
+        path {
+          fill: white;
+        }
+        cursor: pointer;
+      }
+     }

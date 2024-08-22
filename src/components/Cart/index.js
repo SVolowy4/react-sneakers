@@ -1,26 +1,33 @@
+import styles from "./Cart.module.scss"
+
 import HeaderCart from "./HeaderCart"
 import CartModalCard from "./CartModalCard"
 import CartModalFooter from "./CartModalFooter"
 
-export default function Cart() {
+export default function Cart(props) {
    return (
-      <div className="cartModal">
 
-         <div className="cartModalContainer">
+      <div className={styles.overlay}>
 
-            <HeaderCart />
+         <div className={styles.cartModal}>
 
-            <div className="cartModalContent">
+            <div className={styles.cartModalContainer}>
 
-               <CartModalCard />
+               <HeaderCart onClose={props.onClose} />
+
+               <div className={styles.cartModalContent}>
+
+                  <CartModalCard />
+
+               </div>
+
+               <CartModalFooter />
 
             </div>
-
-            <CartModalFooter />
-
 
          </div>
 
       </div>
+
    )
 };

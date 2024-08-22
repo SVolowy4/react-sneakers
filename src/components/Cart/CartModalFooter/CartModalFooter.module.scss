@@ -1,0 +1,59 @@
+.cartModalFooter {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   .cartModalFooterTotal {
+     display: flex;
+     justify-content: space-between;
+     gap: 5px;
+     .cartModalFooterTotalMidle {
+       flex: 1;
+       border-bottom: 1px dashed rgba(128, 128, 128, 0.495);
+     }
+     .cartModalFooterTotalPrice {
+       font-weight: bold;
+     }
+   }
+   .cartModalFooterFare {
+     display: flex;
+     justify-content: space-between;
+     gap: 5px;
+     margin-bottom: 10px;
+     .cartModalFooterFareMidle {
+       flex: 1;
+       border-bottom: 1px dashed rgba(128, 128, 128, 0.495);
+     }
+     .cartModalFooterFarePrice {
+       font-weight: bold;
+     }
+   }
+   .cartModalBtn {
+     button {
+       width: 100%;
+       background-color: rgb(68, 208, 68);
+       display: flex;
+       justify-content: space-between;
+       padding: 15px;
+       border-radius: 20px;
+       border: 0;
+       color: white;
+       font-weight: bold;
+         &:hover {
+         background-color: lighten($color: rgb(68, 208, 68), $amount: 10);
+         transition: background-color 0.2s ease-in-out;
+         &:active {
+           background-color: darken($color: rgb(68, 208, 68), $amount: 10);
+           transition: background-color 0.2s ease-in-out;
+         }
+         img {
+           transform: translateX(-50px);
+           transition: transform 0.2s ease-in-out;
+         }
+         span {
+           transform: translateX(10px);
+           transition: transform 0.2s ease-in-out;
+         }  
+       }
+     }
+   }
+ }
