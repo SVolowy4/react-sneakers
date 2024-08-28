@@ -10,6 +10,7 @@ function App() {
 
     const [items, setItems] = React.useState([])
     const [cartOpened, setCartOpened] = React.useState(false)
+    const [cartItems, setCartItems] = React.useState([])
 
 React.useEffect(() => {
   fetch('https://66c7a361732bf1b79fa71c2a.mockapi.io/items')
@@ -19,12 +20,16 @@ React.useEffect(() => {
   .then((json) => {
     setItems(json)
   })
-})
+}, [])
+
+const addToCart = (obj) => {
+  setCartItems((prev) => [...prev, obj])
+}
 
   return (
     <div className="wrapper">
 
-      {cartOpened && <Cart onClose={() => setCartOpened(false)} />}
+      {cartOpened && <Cart items={cartItems} onClose={() => setCartOpened(false)} />}
 
       <Header onClickCart = {() => setCartOpened(true)}/>
 
@@ -34,12 +39,12 @@ React.useEffect(() => {
 
         <div className="contentCards">
 
-          {items.map((obj) => (
+          {items.map((item) => (
             <Card 
-              image = {obj.image}
-              title = {obj.title}
-              price = {obj.price}
-              addToCart = {() => console.log(obj)}
+              image = {item.image}
+              title = {item.title}
+              price = {item.price}
+              addToCart = {(obj) => addToCart(item)}
             />
           ))}
 

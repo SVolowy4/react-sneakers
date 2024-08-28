@@ -2,11 +2,12 @@ import React from "react"
 
 import styles from "./Card.module.scss"
 
-export default function Card(props) {
+export default function Card({image, title, price, addToCart}) {
 
    const [isAdded, setIsAdded] = React.useState(false)
 
    const onClickPlus = () => {
+      addToCart({image, title, price})
       setIsAdded(!isAdded)
    }
 
@@ -16,13 +17,13 @@ export default function Card(props) {
 
          <div className="cardImage">
 
-            <img src={props.image} width={180} height={140} alt="" />
+            <img src={image} width={180} height={140} alt="" />
 
          </div>
 
          <div className={styles.cardTitle}>
 
-            {props.title}
+            {title}
 
          </div>
 
@@ -32,7 +33,7 @@ export default function Card(props) {
 
                <span>Ціна:</span>
 
-               <p>{props.price} грн</p>
+               <p>{price} грн</p>
 
             </div>
 
