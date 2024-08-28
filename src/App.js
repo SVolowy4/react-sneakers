@@ -8,25 +8,26 @@ import Card from "./components/Card";
 
 function App() {
 
-    const [items, setItems] = React.useState([])
-    const [cartOpened, setCartOpened] = React.useState(false)
-    const [cartItems, setCartItems] = React.useState([])
+  const [items, setItems] = React.useState([])
+  const [cartOpened, setCartOpened] = React.useState(false)
+  const [cartItems, setCartItems] = React.useState([])
 
-React.useEffect(() => {
-  fetch('https://66c7a361732bf1b79fa71c2a.mockapi.io/items')
-  .then((res) => {
-    return res.json()
-  })
-  .then((json) => {
-    setItems(json)
-  })
-}, [])
+  React.useEffect(() => {
+    fetch('https://66c7a361732bf1b79fa71c2a.mockapi.io/items')
+    .then((res) => {
+      return res.json()
+    })
+    .then((json) => {
+      setItems(json)
+    })
+  }, [])
 
-const addToCart = (obj) => {
-  setCartItems((prev) => [...prev, obj])
-}
+  const addToCart = (obj) => {
+    setCartItems((prev) => [...prev, obj])
+  }
 
   return (
+
     <div className="wrapper">
 
       {cartOpened && <Cart items={cartItems} onClose={() => setCartOpened(false)} />}
@@ -53,6 +54,7 @@ const addToCart = (obj) => {
       </div>
 
     </div>
+    
   );
 }
 
