@@ -1,6 +1,6 @@
 import styles from "./CartModalCard.module.scss"
 
-export default function CartModalCard({image, title, price}) {
+export default function CartModalCard({image, title, price, onRemoveItem}) {
    return (
 
    <div className={styles.cartModalCard}>
@@ -21,7 +21,7 @@ export default function CartModalCard({image, title, price}) {
 
       <div className={styles.cartModalCardBtn}>
 
-         <img src="/img/btn-remove.svg" alt="remove card" />
+         <img onClick={onRemoveItem} src="/img/btn-remove.svg" alt="remove card" />
 
       </div>
 

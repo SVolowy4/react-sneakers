@@ -3,14 +3,16 @@ import styles from "./Header.module.scss"
 import HeaderLeft from "./HeaderLeft"
 import HeaderRight from "./HeaderRight"
 
-export default function Header(props) {
+export default function Header({onClickCart}) {
    return (
 
       <div className={styles.header}>
 
          <HeaderLeft />
 
-         <HeaderRight onClickCart={props.onClickCart} />
+         <HeaderRight 
+         onClickCart={onClickCart} 
+         />
 
       </div>
 

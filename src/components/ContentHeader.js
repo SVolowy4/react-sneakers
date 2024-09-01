@@ -1,15 +1,21 @@
-export default function ContentHeader() {
+export default function ContentHeader({onChangeSearchValue, searchValue, setSearchValue}) {
    return (
       <div className="contentHeader">
 
          <div className="contentHeaderTitle">
-         <h1>Всі "кросівки"</h1>
+            <h1>{searchValue ? `Знайшов: "${searchValue}"` : 'Всі кросівки'}</h1>
          </div>
 
          <div className="contentHeaderInput">
 
-         <img src="/img/search.svg" alt="" />
-         <input type="text" placeholder="Пошук..." alt="search" />
+            <img onClick={() => setSearchValue('')} src={!searchValue ? "/img/search.svg" : "/img/btn-remove.svg"} alt="" />
+            <input 
+            onChange={onChangeSearchValue}
+            value={searchValue} 
+            type="text" 
+            placeholder="Пошук..." 
+            alt="search" 
+            />
          
          </div>
          

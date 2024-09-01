@@ -7,13 +7,15 @@
    justify-content: center;
    border: 1px solid rgba(128, 128, 128, 0.249);
    border-radius: 20px;
-   padding: 20px;
+   padding: 20px;   
+   transition: box-shadow, transform 0.2s ease-in-out;
    &:hover {
      transform: translateX(20px);
      transform: translateY(-10px);
      box-shadow: 5px 5px 10px black;
      transition: box-shadow, transform 0.2s ease-in-out;
    }
+
 
    .cardTitle {
      margin-bottom: 10px;
