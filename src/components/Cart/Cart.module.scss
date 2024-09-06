@@ -21,7 +21,10 @@
      display: flex;
      flex-direction: column;
      height: 95%;
-
+    .cartModalBlock {
+      display: flex;
+      flex-direction: column;
+      height: 95%;
      .cartModalContent {
        overflow: auto;
        flex: 1;
@@ -29,6 +32,50 @@
        flex-direction: column;
        gap: 20px;
        margin-bottom: 30px;
+     }
+
+    }
+      .emptyCartBlock {
+        padding: 30px;
+        .emptyCartTitle {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .emptyCartImage {
+          margin-bottom: 30px;
+        }
+        .cartModalBtn {
+          button {
+            width: 100%;
+            background-color: rgb(68, 208, 68);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-radius: 20px;
+            border: 0;
+            color: white;
+            font-weight: bold;
+              &:hover {
+                background-color: lighten($color: rgb(68, 208, 68), $amount: 10);
+                transition: background-color 0.2s ease-in-out;
+                span {
+                  transform:translateX(-20px);
+                  transition: transform 0.2s ease-in-out;
+                }
+              &:active {
+                background-color: darken($color: rgb(68, 208, 68), $amount: 10);
+                transition: background-color 0.2s ease-in-out;
+                img {
+                  transform: translateX(-40px);
+                  transition: transform 0.1s ease-in-out;
+                }
+              }
+            }
+            img {
+              transform: rotate(180deg);
+            }
+          }
+        }
      }
    }
  }

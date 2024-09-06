@@ -27,7 +27,7 @@ function App() {
   }
   const onRemoveItem = (id) => {
     axios.delete(`https://66c7a361732bf1b79fa71c2a.mockapi.io/cart/${id}`)
-    setCartItems((prev) => prev.filter(item => item.id != id))
+    setCartItems((prev) => prev.filter(item => item.id !== id))
   }
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value)
